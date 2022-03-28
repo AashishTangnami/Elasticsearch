@@ -198,5 +198,10 @@ Basic concept is that elasticsearch distributes data around the cluster.
         ![Writeandread](picture/writeandread.png)
 			
 
+#References 
+	- [Elasticsearch](https://www.elastic.co/what-is/elasticsearch)
+	- [Elasticsearch-Edureka](https://www.edureka.co/blog/what-is-elasticsearch/)
+	- [Elasticsearch-packtpub](https://www.packtpub.com/product/advanced-elasticsearch-7-0/9781789957754)
+	- 
 
 
