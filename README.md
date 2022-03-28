@@ -1,22 +1,18 @@
 # Basics of Elasticsearch. 
----
-** Elasticsearch **
+
 ---
 
 ## Elasticsearch 
-```
+
  Elasticsearch is a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured. Elasticsearch is built on Apache Lucene. Documented oriented(JSON) data saving like objects. 
-```
+
 ---
 
 
 
 ## Why Elasticsearch?
-   Query
-        It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
-        Analyze	
- Users can understand billions of log lines easily.
-It provides aggregations which help users to zoom out to explore trends and patterns in data.
+    *Query - It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
+    *Analyze - Users can understand billions of log lines easily. It provides aggregations which help users to zoom out to explore trends and patterns in data.
 
 Index - 
 An index is  like a database in a relational database. It has a mapping which defines multiple types.
@@ -24,9 +20,9 @@ An index is a logical namespace which maps to one or more primary shards and can
 
 Basic concept is that elasticsearch distributes data around the cluster.
 
-MySQL ⇒ Databases ⇒ Tables ⇒ Columns/Rows
+## MySQL ⇒ Databases ⇒ Tables ⇒ Columns/Rows
 
-Elasticsearch ⇒ Indices ⇒ Types ⇒ Documents with properties.
+## Elasticsearch ⇒ Indices ⇒ Types ⇒ Documents with properties.
 
 Document - A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
 
