@@ -3,16 +3,18 @@
 ** Elasticsearch **
 ---
 
-Elasticsearch - Elasticsearch is a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured. Elasticsearch is built on Apache Lucene. Documented oriented(JSON) data saving like objects. 
-
+## Elasticsearch 
+```
+ Elasticsearch is a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured. Elasticsearch is built on Apache Lucene. Documented oriented(JSON) data saving like objects. 
+```
 ---
 
 
 
-Why Elasticsearch?
-Query
-It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
-Analyze	
+## Why Elasticsearch?
+   Query
+        It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
+        Analyze	
  Users can understand billions of log lines easily.
 It provides aggregations which help users to zoom out to explore trends and patterns in data.
 
@@ -155,9 +157,9 @@ Static setting -  These settings need to be configured on the config (elasticsea
 Dynamic Setting - These settings can be set on live Elasticsearch.
 Modules types - 
 
-Most common index patterns:
+# Most common index patterns:
 
-Monolith Index:
+## Monolith Index:
 These kinds of indices are created when external data is pushed into elasticsearch for indexing and aggregation of data. Data is spread out across multiple nodes in a cluster. 
 Re-indexing can be better achieved by scaling out the number of shards.
 
