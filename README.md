@@ -22,36 +22,36 @@
 ---
 Basic concept is that elasticsearch distributes data around the cluster.
 
-## MySQL ⇒ Databases ⇒ Tables ⇒ Columns/Rows
+### MySQL ⇒ Databases ⇒ Tables ⇒ Columns/Rows
 
-## Elasticsearch ⇒ Indices ⇒ Types ⇒ Documents with properties.
+### Elasticsearch ⇒ Indices ⇒ Types ⇒ Documents with properties.
 ---
 
-+ Document 
++ #### Document 
     - A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
 
-+ Shards 
++ #### Shards 
     - Elasticsearch provides the ability to subdivide the index into multiple pieces called shards. Each shard is in itself a fully-functional and independent “index” that can be hosted on any node within the cluster.
 
-+ Replicas 
++ #### Replicas 
     - Elasticsearch allows you to make one or more copies of your index’s shards which are called replica shards or replica.
 
-+ Cluster 
++ #### Cluster 
     - Group of multiple nodes of documents is a cluster.
 + Elasticsearch cluster is a collection of multiple indices(databases) which in turn contain multiple Types(tables). These types hold multiple documents(row) and each document has properties(columns.)
 
 
-+ API Conventions 
++ #### API Conventions 
     - The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
-    - Multiple Indices
+    - ##### Multiple Indices
         * Notations are used to perform operations in multiple indices
         + Comma separated notations (demo1, demo2, demo3)
         - Wildcard notations (*,+,-) - (demo*, demo2, +demo3, -demo3) for all indices.
-URL query string parameters.
-Ignore_unavialable
-Allow_no_indices
-expand_wildcards
-Date Math Support in Index Name.
+        - URL query string parameters.
+        - Ignore_unavialable
+        - Allow_no_indices
+        - expand_wildcards
+    - ##### Date Math Support in Index Name.
 Elasticsearch is used to search indices according to date and time.
 Specifying date and time in a specific format
 
