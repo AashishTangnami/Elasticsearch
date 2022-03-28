@@ -54,7 +54,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
     - ##### Date Math Support in Index Name.
         - Elasticsearch is used to search indices according to date and time.
         - Specifying date and time in a specific format
-        - ![format](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/specificformat.png)
+        - ![format](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/specificformat.png "Specific date math format")
 
     - ##### Common Options
         - Pretty Result
