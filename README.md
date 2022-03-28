@@ -11,9 +11,9 @@
 
 
 ## Why Elasticsearch?
-+ Query 
++ #### Query 
     - It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
-+ Analyze 
++ #### Analyze 
     - Users can understand billions of log lines easily. It provides aggregations which help users to zoom out to explore trends and patterns in data.
 
 ## Index  
@@ -44,74 +44,75 @@ Basic concept is that elasticsearch distributes data around the cluster.
 + #### API Conventions 
     - The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
     - ##### Multiple Indices
-        * Notations are used to perform operations in multiple indices
-        + Comma separated notations (demo1, demo2, demo3)
+        - Notations are used to perform operations in multiple indices
+        - Comma separated notations (demo1, demo2, demo3)
         - Wildcard notations (*,+,-) - (demo*, demo2, +demo3, -demo3) for all indices.
         - URL query string parameters.
-        - Ignore_unavialable
-        - Allow_no_indices
-        - expand_wildcards
+            - Ignore_unavialable
+            - Allow_no_indices
+            - expand_wildcards
     - ##### Date Math Support in Index Name.
-Elasticsearch is used to search indices according to date and time.
-Specifying date and time in a specific format
+        - Elasticsearch is used to search indices according to date and time.
+        - Specifying date and time in a specific format
 
-Common Options
-Pretty Result
-Human Readable Output
-Date Math
-Response Filtering
-Flat settings
-Parameter
-No Values
-Time Units
-Byte Size Units
-Unit-less quantities
-Distance Units
-Fuzziness
-Enabling Stack Traces
-Request Body in Query String
-
-
-URL based ACCESS CONTROL.
-Users can use a proxy with URL-Based access control to secure access to the Elasticsearch indices
-User has an option of specifying an index in the URL and on each individual request like:
-Multi-search
-Multi-get
-Bulk
+    - ##### Common Options
+        - Pretty Result
+        - Human Readable Output
+        - Date Math
+        - Response Filtering
+        - Flat settings
+        - Parameter
+        - No Values
+        - Time Units
+        - Byte Size Units
+        - Unit-less quantities
+        - Distance Units
+        - Fuzziness
+        - Enabling Stack Traces
+        - Request Body in Query String
 
 
-Types of APIs
-Document APIs
-Index API
-Get API
-Update API
-Delete API
-Search APIs - execute search query and get back search hits that match the query.
-Multi Index 
-It is used to search for the documents present in all the indices or in some specific indices
-Multi-Type
-It is used to search all the documents in an index across all types or in some specified type.
-URI search
-Various parameters can be passed in a search operation using Uniform Resource Identifier:
-q (../_search?q=year:yyyy)
-timeout
-lenient
-terminate_after
-fields
-from
-sort
-size
+    - ##### URL based ACCESS CONTROL.
+        - Users can use a proxy with URL-Based access control to secure access to the Elasticsearch indices
+        - User has an option of specifying an index in the URL and on each individual request like:
+            - Multi-search
+            - Multi-get
+            - Bulk
 
 
-Aggregation
-Aggregation collects all the data which is selected by the search query. This framework consists of many building blocks called aggregators, which help in building complex summaries of the data.
-Types of Aggregation
-Bucketing
-Metric
-Matrix
-Pipeline
+- ### Types of APIs
+    1. #### Document APIs
+        - Index API
+        - Get API
+        - Update API
+        - Delete API
 
-Index APIs - It is responsible for managing all the aspects of index like settings, aliases, mappings, indexes templates.
+    2. #### Search APIs - execute search query and get back search hits that match the query.
+        - ##### Multi Index 
+            - It is used to search for the documents present in all the indices or in some specific indices.
+        - ##### Multi-Type
+            - It is used to search all the documents in an index across all types or in some specified type.
+        - ##### URI search
+            - Various parameters can be passed in a search operation using Uniform Resource Identifier:
+                - q (../_search?q=year:yyyy)
+                - timeout
+                - lenient
+                - terminate_after
+                - fields
+                - from
+                - sort
+                - size
+
+
+    3. #### Aggregation
+        - Aggregation collects all the data which is selected by the search query. This framework consists of many building blocks called aggregators, which help in building complex summaries of the data.
+        - #### Types of Aggregation
+            1. Bucketing
+            2. Metric
+            3. Matrix
+            4. Pipeline
+
+    3. #### Index APIs - It is responsible for managing all the aspects of index like settings, aliases, mappings, indexes templates.
 Create Index
 Delete Index
 Get Index
