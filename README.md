@@ -54,6 +54,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
     - ##### Date Math Support in Index Name.
         - Elasticsearch is used to search indices according to date and time.
         - Specifying date and time in a specific format
+        - (https://github.com/AashishTangnamiMgr/Elasticsearch/picture/specificformat.png)
 
     - ##### Common Options
         - Pretty Result
@@ -112,61 +113,61 @@ Basic concept is that elasticsearch distributes data around the cluster.
             3. Matrix
             4. Pipeline
 
-    3. #### Index APIs - It is responsible for managing all the aspects of index like settings, aliases, mappings, indexes templates.
-Create Index
-Delete Index
-Get Index
-Index Exits
-Open/Close Index API
-Index Aliases
-Index Settings
-Index Template
-Index Stats
-Flush
-Refresh
-Analyze.
+    4. #### Index APIs - It is responsible for managing all the aspects of index like settings, aliases, mappings, indexes templates.
+        - Create Index
+        - Delete Index
+        - Get Index
+        - Index Exits
+        - Open/Close Index API
+        - Index Aliases
+        - Index Settings
+        - Index Template
+        - Index Stats
+        - Flush
+        - Refresh
+        - Analyze.
 
-Cluster APIs - Cluster API is used for getting the information about the cluster and its nodes and making changes in them.
-Cluster Health
-Cluster State
-Cluster Stats
-Pending Cluster Task
-Cluster Reroute
-Node Stats
-Nodes hot_threads.
-Query DSL (Domain specific language)
-Elasticsearch provides a full Query DSL based on JSON to define queries. Query DSL is an AST of queries, consisting of two types of clauses
-Leaf Query Clauses.
-Compound Query Clauses.
+    5. #### Cluster APIs - Cluster API is used for getting the information about the cluster and its nodes and making changes in them.
+    - Cluster Health
+        - Cluster State
+            - Cluster Stats
+                - Pending Cluster Task
+                    - Cluster Reroute
+                        - Node Stats
+                            - Nodes hot_threads.
+- ### Query DSL (Domain specific language)
+    - Elasticsearch provides a full Query DSL based on JSON to define queries. Query DSL is an AST of queries, consisting of two types of clauses
+        1. Leaf Query Clauses.
+        2. Compound Query Clauses.
 
 
-MAPPING  - Mapping is the process of defining how a document and the fields that it contains are stored and indexed.
-Mapping Types 
-Meta - fields
-Fields or properties
-Field Data Types
-Core Data Types
-Complex Data Types
-Geo Data Types
-Specialized Data Types
+- ### MAPPING  - Mapping is the process of defining how a document and the fields that it contains are stored and indexed.
+    - ##### Mapping Types 
+        - Meta - fields
+        - Fields or properties
+    - ##### Field Data Types
+        - Core Data Types
+        - Complex Data Types
+        - Geo Data Types
+        - Specialized Data Types
 
-Analysis -  During a search operation when a query is processed, the content of any index is analyzed by the analysis module.
-Analyzer 
-Tokenizer
-Token filter
-Character filter
+- ### Analysis -  During a search operation when a query is processed, the content of any index is analyzed by the analysis module.
+    - Analyzer 
+    - Tokenizer
+    - Token filter
+    - Character filter
 
-Modules - Elasticsearch is composed of a number of modules, which are mainly responsible for its functionality.
-Types of settings:
-Static setting -  These settings need to be configured on the config (elasticsearch.yml) file before starting the Elasticsearch.
-Dynamic Setting - These settings can be set on live Elasticsearch.
+- ###  Modules - Elasticsearch is composed of a number of modules, which are mainly responsible for its functionality.
+    - #### Types of settings:
+        - Static setting -  These settings need to be configured on the config (elasticsearch.yml) file before starting the Elasticsearch.
+        - Dynamic Setting - These settings can be set on live Elasticsearch.
 Modules types - 
 
 # Most common index patterns:
 
-## Monolith Index:
-These kinds of indices are created when external data is pushed into elasticsearch for indexing and aggregation of data. Data is spread out across multiple nodes in a cluster. 
-Re-indexing can be better achieved by scaling out the number of shards.
+1. ## Monolith Index:
+    - These kinds of indices are created when external data is pushed into elasticsearch for indexing and aggregation of data. Data is spread out across multiple nodes in a cluster. 
+    - Re-indexing can be better achieved by scaling out the number of shards.
 
 
 
