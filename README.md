@@ -11,12 +11,14 @@
 
 
 ## Why Elasticsearch?
-    *Query - It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
-    *Analyze - Users can understand billions of log lines easily. It provides aggregations which help users to zoom out to explore trends and patterns in data.
+    + Query 
+    - It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
+    + Analyze 
+    - Users can understand billions of log lines easily. It provides aggregations which help users to zoom out to explore trends and patterns in data.
 
-Index - 
-An index is  like a database in a relational database. It has a mapping which defines multiple types.
-An index is a logical namespace which maps to one or more primary shards and can have zero or more replica shards.
+## Index  
++ An index is  like a database in a relational database. It has a mapping which defines multiple types.
++ An index is a logical namespace which maps to one or more primary shards and can have zero or more replica shards.
 
 Basic concept is that elasticsearch distributes data around the cluster.
 
