@@ -54,7 +54,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
     - ##### Date Math Support in Index Name.
         - Elasticsearch is used to search indices according to date and time.
         - Specifying date and time in a specific format
-        ![format](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/specificformat.png "Specific date math format")
+        ![format](picture/specificformat.png "Specific date math format")
 
     - ##### Common Options
         - Pretty Result
@@ -172,7 +172,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
 ---
 1. ## Monolith Index:
     - These kinds of indices are created when external data is pushed into elasticsearch for indexing and aggregation of data. Data is spread out across multiple nodes in a cluster. 
-    ![elasticsearchcluster](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/elasticsearchcluster.png)
+    ![elasticsearchcluster](picture/elasticsearchcluster.png)
     - Re-indexing can be better achieved by scaling out the number of shards.
 
     - #### Monolith indexes 
@@ -185,7 +185,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
             - Shards should not be too big or too small to optimize search performance.
             - Rule of Thumb: 1 million docs per shard and a max of 5 to 10 GB on disk.
             - Index shrinking by example: If the number of shards count is prime number then, Its shard - count can be reduced to value divisible by itself or 1.
-            ![Indexshrinking](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/indexshrinking.png)
+            ![Indexshrinking](picture/indexshrinking.png)
             - Index shrinking lets you expand and contract shard count to better optimize performance and resource allocation.
             - Index shrinking != re-indexing.
 ---
@@ -195,7 +195,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
     - Generally, elasticsearch is read optimized for search; 
         - the nature of rolling indices requires that a given index be write optimized during periods of huge data ingest.
         -  An example:  Sensor data that is tracked for 24 hour periods of time. Each 24-hour period yields a new index which is write intensive or write intensive period. The write intensive period actually prompts over sharding. This is necessitate over  sharding because as we can employ more shards to better help process and once the 24 hours period is over the index is subsequently archived and is no longer being written to and as a result of that we can reduce the number of shards because this is the read intensive period. The optimal way to manage resources in an elastic search cluster.
-        ![Writeandread](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/writeandread.png)
+        ![Writeandread](picture/writeandread.png)
 			
 
 
