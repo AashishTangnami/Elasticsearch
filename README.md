@@ -11,33 +11,40 @@
 
 
 ## Why Elasticsearch?
-    + Query 
++ Query 
     - It lets users perform and combine many types of searches like structured and unstructured, geo, metric etc data. 
-    + Analyze 
++ Analyze 
     - Users can understand billions of log lines easily. It provides aggregations which help users to zoom out to explore trends and patterns in data.
 
 ## Index  
 + An index is  like a database in a relational database. It has a mapping which defines multiple types.
 + An index is a logical namespace which maps to one or more primary shards and can have zero or more replica shards.
-
+---
 Basic concept is that elasticsearch distributes data around the cluster.
 
 ## MySQL ⇒ Databases ⇒ Tables ⇒ Columns/Rows
 
 ## Elasticsearch ⇒ Indices ⇒ Types ⇒ Documents with properties.
+---
 
-Document - A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
++ Document 
+- A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
 
-Shards - Elasticsearch provides the ability to subdivide the index into multiple pieces called shards. Each shard is in itself a fully-functional and independent “index” that can be hosted on any node within the cluster.
++ Shards 
+- Elasticsearch provides the ability to subdivide the index into multiple pieces called shards. Each shard is in itself a fully-functional and independent “index” that can be hosted on any node within the cluster.
 
-Replicas - Elasticsearch allows you to make one or more copies of your index’s shards which are called replica shards or replica.
++ Replicas 
+- Elasticsearch allows you to make one or more copies of your index’s shards which are called replica shards or replica.
 
-Cluster - Group of multiple nodes of documents is a cluster.
-Elasticsearch cluster is a collection of multiple indices(databases) which in turn contain multiple Types(tables). These types hold multiple documents(row) and each document has properties(columns.)
++ Cluster 
+- Group of multiple nodes of documents is a cluster.
++ Elasticsearch cluster is a collection of multiple indices(databases) which in turn contain multiple Types(tables). These types hold multiple documents(row) and each document has properties(columns.)
 
 
-API Conventions - The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
-Multiple Indices
++ API Conventions 
+- The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
+- Multiple Indices
+start: 
 Notations are used to perform operations in multiple indices
 Comma separated notations (demo1, demo2, demo3)
 Wildcard notations (*,+,-) - (demo*, demo2, +demo3, -demo3) for all indices.
