@@ -28,26 +28,25 @@ Basic concept is that elasticsearch distributes data around the cluster.
 ---
 
 + Document 
-- A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
+    - A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
 
 + Shards 
-- Elasticsearch provides the ability to subdivide the index into multiple pieces called shards. Each shard is in itself a fully-functional and independent “index” that can be hosted on any node within the cluster.
+    - Elasticsearch provides the ability to subdivide the index into multiple pieces called shards. Each shard is in itself a fully-functional and independent “index” that can be hosted on any node within the cluster.
 
 + Replicas 
-- Elasticsearch allows you to make one or more copies of your index’s shards which are called replica shards or replica.
+    - Elasticsearch allows you to make one or more copies of your index’s shards which are called replica shards or replica.
 
 + Cluster 
-- Group of multiple nodes of documents is a cluster.
+    - Group of multiple nodes of documents is a cluster.
 + Elasticsearch cluster is a collection of multiple indices(databases) which in turn contain multiple Types(tables). These types hold multiple documents(row) and each document has properties(columns.)
 
 
 + API Conventions 
-- The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
-- Multiple Indices
-start: 
-Notations are used to perform operations in multiple indices
-Comma separated notations (demo1, demo2, demo3)
-Wildcard notations (*,+,-) - (demo*, demo2, +demo3, -demo3) for all indices.
+    - The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
+    - Multiple Indices
+        * Notations are used to perform operations in multiple indices
+        + Comma separated notations (demo1, demo2, demo3)
+        - Wildcard notations (*,+,-) - (demo*, demo2, +demo3, -demo3) for all indices.
 URL query string parameters.
 Ignore_unavialable
 Allow_no_indices
