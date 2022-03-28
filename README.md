@@ -29,18 +29,18 @@ Basic concept is that elasticsearch distributes data around the cluster.
 
 + #### Document 
     - A document is a basic unit of information which can be indexed. It is expressed in JSON which is an ubiquitous internet data interchange format.
-
+---
 + #### Shards 
     - Elasticsearch provides the ability to subdivide the index into multiple pieces called shards. Each shard is in itself a fully-functional and independent “index” that can be hosted on any node within the cluster.
-
+---
 + #### Replicas 
     - Elasticsearch allows you to make one or more copies of your index’s shards which are called replica shards or replica.
-
+---
 + #### Cluster 
     - Group of multiple nodes of documents is a cluster.
 + Elasticsearch cluster is a collection of multiple indices(databases) which in turn contain multiple Types(tables). These types hold multiple documents(row) and each document has properties(columns.)
 
-
+---
 + #### API Conventions 
     - The elasticsearch REST APIs are accessed using JSON over HTTP. Elasticsearch uses following conventions throughout the REST API.
     - ##### Multiple Indices
@@ -79,7 +79,7 @@ Basic concept is that elasticsearch distributes data around the cluster.
             - Multi-search
             - Multi-get
             - Bulk
-
+---
 
 - ### Types of APIs
     1. #### Document APIs
@@ -128,19 +128,21 @@ Basic concept is that elasticsearch distributes data around the cluster.
         - Analyze.
 
     5. #### Cluster APIs - Cluster API is used for getting the information about the cluster and its nodes and making changes in them.
-    - Cluster Health
-        - Cluster State
-            - Cluster Stats
-                - Pending Cluster Task
-                    - Cluster Reroute
-                        - Node Stats
-                            - Nodes hot_threads.
+        - Cluster Health
+            - Cluster State
+                - Cluster Stats
+                    - Pending Cluster Task
+                        - Cluster Reroute
+                            - Node Stats
+                                - Nodes hot_threads.
+
+---
 - ### Query DSL (Domain specific language)
     - Elasticsearch provides a full Query DSL based on JSON to define queries. Query DSL is an AST of queries, consisting of two types of clauses
         1. Leaf Query Clauses.
         2. Compound Query Clauses.
 
-
+---
 - ### MAPPING  - Mapping is the process of defining how a document and the fields that it contains are stored and indexed.
     - ##### Mapping Types 
         - Meta - fields
@@ -150,55 +152,50 @@ Basic concept is that elasticsearch distributes data around the cluster.
         - Complex Data Types
         - Geo Data Types
         - Specialized Data Types
+---
 
 - ### Analysis -  During a search operation when a query is processed, the content of any index is analyzed by the analysis module.
     - Analyzer 
     - Tokenizer
     - Token filter
     - Character filter
-
+---
 - ###  Modules - Elasticsearch is composed of a number of modules, which are mainly responsible for its functionality.
     - #### Types of settings:
         - Static setting -  These settings need to be configured on the config (elasticsearch.yml) file before starting the Elasticsearch.
         - Dynamic Setting - These settings can be set on live Elasticsearch.
         - Modules types - 
-            ![moduletypes] (https://github.com/AashishTangnamiMgr/Elasticsearch/picture/module types.png)
+            ![moduletypes] (https://github.com/AashishTangnamiMgr/Elasticsearch/picture/moduletypes.png)
 
-
+---
 # Most common index patterns:
-
+---
 1. ## Monolith Index:
     - These kinds of indices are created when external data is pushed into elasticsearch for indexing and aggregation of data. Data is spread out across multiple nodes in a cluster. 
-    ![elasticsearchcluster](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/elasticsearch cluster.png)
+    ![elasticsearchcluster](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/elasticsearchcluster.png)
     - Re-indexing can be better achieved by scaling out the number of shards.
-    
 
-
-
-
-
-
-- #### Monolith indexes 
-    - are generally used to optimize for search, for bulk updates occasionally. 
-    - For example: If mapping needs to be changed in an index, it is necessary to re-create the index or reindex to ensure the consistency. 
-        - In this situation, in terms of speed, may require more shards. Scaling out to handle the reindexing load. Thus, Sharding allows more than one node to participate in the reindexing. But numbers of shards cannot be changed when an index has been created.
-        - But shards are mutable by the index shrinking.
-        - Shrink the total number of shards.
-        - Must be a factor of the original numbers of shards.
-        - Shards should not be too big or too small to optimize search performance.
-        - Rule of Thumb: 1 million docs per shard and a max of 5 to 10 GB on disk.
-        - Index shrinking by example: If the number of shards count is prime number then, Its shard - count can be reduced to value divisible by itself or 1.
-        ![Indexshrinking](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/index shrinking.png)
-        - Index shrinking lets you expand and contract shard count to better optimize performance and resource allocation.
-        - Index shrinking != re-indexing.
-
+    - #### Monolith indexes 
+        - are generally used to optimize for search, for bulk updates occasionally. 
+        - For example: If mapping needs to be changed in an index, it is necessary to re-create the index or reindex to ensure the consistency. 
+            - In this situation, in terms of speed, may require more shards. Scaling out to handle the reindexing load. Thus, Sharding allows more than one node to participate in the reindexing. But numbers of shards cannot be changed when an index has been created.
+            - But shards are mutable by the index shrinking.
+            - Shrink the total number of shards.
+            - Must be a factor of the original numbers of shards.
+            - Shards should not be too big or too small to optimize search performance.
+            - Rule of Thumb: 1 million docs per shard and a max of 5 to 10 GB on disk.
+            - Index shrinking by example: If the number of shards count is prime number then, Its shard - count can be reduced to value divisible by itself or 1.
+            ![Indexshrinking](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/indexshrinking.png)
+            - Index shrinking lets you expand and contract shard count to better optimize performance and resource allocation.
+            - Index shrinking != re-indexing.
+---
 - ### Rolling Index:
     - Rolling index is created based on time and receives data over a given period. (rolling or continual basis).
         - For example : Log data based on time series data indices are created over a given time of period with indices containing older data being archived.
     - Generally, elasticsearch is read optimized for search; 
         - the nature of rolling indices requires that a given index be write optimized during periods of huge data ingest.
         -  An example:  Sensor data that is tracked for 24 hour periods of time. Each 24-hour period yields a new index which is write intensive or write intensive period. The write intensive period actually prompts over sharding. This is necessitate over  sharding because as we can employ more shards to better help process and once the 24 hours period is over the index is subsequently archived and is no longer being written to and as a result of that we can reduce the number of shards because this is the read intensive period. The optimal way to manage resources in an elastic search cluster.
-        ![Writeandread](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/write and read.png)
+        ![Writeandread](https://github.com/AashishTangnamiMgr/Elasticsearch/picture/writeandread.png)
 			
 
 
